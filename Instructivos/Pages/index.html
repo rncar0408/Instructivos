@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructivo InscribCórdoba - Alta de Usuario</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS (para iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            /* Cambié la fuente */
+            margin: 20px;
+            background-color: #f8f9fa;
+            /* Fondo sutil */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #007bff;
+            /* Color primario de Bootstrap */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            display: none;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            /* Borde más suave */
+            background-color: #fff;
+            /* Fondo blanco para los pasos */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Sombra sutil */
+        }
+
+        .step img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border: 1px solid #ced4da;
+            /* Borde para las imágenes */
+            border-radius: 5px;
+        }
+
+        .step h2 {
+            color: #343a40;
+            /* Color de texto más oscuro */
+            animation: highlight 1s ease-in-out;
+        }
+
+        @keyframes highlight {
+            0% {
+                background-color: rgba(0, 123, 255, 0.2);
+            }
+
+            /* Resaltado azul sutil */
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .navigation button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            /* Transición suave */
+        }
+
+        .navigation button:hover {
+            background-color: #0069d9;
+            /* Oscurecer al hacer hover */
+        }
+
+        /* Estilo para el primer paso (mostrarlo inicialmente) */
+        #step1 {
+            display: block;
+        }
+
+        /* Animación de Fade-in */
+        .step.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            /* Desplazamiento sutil */
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Iconos en los botones */
+        .navigation button i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pasos para alta de usuario en InscribCórdoba</h1>
+
+        <div class="step" id="step1">
+            <h2>Paso 1: Ingresar a la plataforma</h2>
+            <p>Acceder a la plataforma InscribCórdoba a través de <a href="http://inscribcordoba.cunix.net/login"
+                    target="_blank">este enlace</a>.</p>
+            <img src="../Imagenes/imagen1.png" alt="Paso 1" class="img-fluid">
+        </div>
+
+        <div class="step" id="step2">
+            <h2>Paso 2: Iniciar sesión</h2>
+            <p>Ingresar como usuario y contraseña su número de CUIL sin guiones.</p>
+            <img src="../Imagenes/imagen2.png" alt="Paso 2" class="img-fluid">
+        </div>
+
+        <div class="step" id="step3">
+            <h2>Paso 3: Acceder al menú de Alta, Baja y Modificación</h2>
+            <p>Dentro del menú principal, seleccionar "Alta, Baja y Modificación".</p>
+            <img src="../Imagenes/imagen3.png" alt="Paso 3" class="img-fluid">
+        </div>
+
+        <div class="step" id="step4">
+            <h2>Paso 4: Seleccionar Usuarios</h2>
+            <p>En el menú desplegable, seleccionar "Usuarios".</p>
+            <img src="../Imagenes/imagen4.png" alt="Paso 4" class="img-fluid">
+        </div>
+
+        <div class="step" id="step5">
+            <h2>Paso 5: Abrir el formulario de nuevo usuario </h2>
+            <p>Dentro las opciones de la pagina dar click en (+).</p>
+            <img src="../Imagenes/imagen5.png" alt="Paso 5" class="img-fluid">
+        </div>
+        <div class="step" id="step6">
+            <h2>Paso 6: Completar los datos del formulario</h2>
+            <p>Completar todos los datos requeridos en el formulario de alta de usuario y hacer clic en "ENVIAR".</p>
+            <img src="../Imagenes/imagen6.png" alt="Paso 5" class="img-fluid">
+        </div>
+
+        <div class="navigation">
+            <button id="prevBtn" class="btn btn-primary"><i class="fas fa-arrow-left"></i>Anterior</button>
+            <button id="nextBtn" class="btn btn-primary">Siguiente<i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const steps = document.querySelectorAll('.step');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentStep = 0;
+
+            function showStep(stepIndex) {
+                steps.forEach((step, index) => {
+                    step.classList.remove('active');
+                    if (index === stepIndex) {
+                        step.classList.add('active'); // Añade la clase 'active'
+                    }
+                });
+
+                // Deshabilitar/habilitar botones Anterior/Siguiente
+                prevBtn.disabled = stepIndex === 0;
+                nextBtn.disabled = stepIndex === steps.length - 1;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            });
+
+            // Mostrar el primer paso al cargar la página
+            showStep(currentStep);
+        });
+    </script>
+</body>
+
+</html>
